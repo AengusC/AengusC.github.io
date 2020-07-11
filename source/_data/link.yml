@@ -1,0 +1,28 @@
+class:
+  class_name: 友情链接
+  link_list:
+    1:
+      name: Jescu
+      link: https://www.jescu.top/
+      avatar: https://www.jescu.top/images/logo.jpg
+      descr: “好记性不如烂笔头”是我开这个博客的初衷。
+ 
+    2:
+      name: Liuxf
+      link: https://www.liuxuefeng.top/
+      avatar: https://xxxxx/avatar.png
+      descr: Talk is cheap , Show me the code  
+
+#  #class2:
+#    class_name: 链接无效
+#    link_list:
+#      1:
+#        name: 梦xxx
+#        link: https://blog.xxx.com
+#        avatar: https://xxxx/avatar.png
+#        descr: xxxx
+#      2:
+#        name: xx
+#        link: https://www.axxxx.cn/
+#        avatar: https://x
+#        descr: xx
