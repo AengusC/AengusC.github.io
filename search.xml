@@ -4,37 +4,6 @@
   
     
     <entry>
-      <title>TEST</title>
-      <link href="/2020/07/11/TEST/"/>
-      <url>/2020/07/11/TEST/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 笔记 </category>
-          
-          <category> PYTHON </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 学习笔记 </tag>
-            
-            <tag> 技术 </tag>
-            
-            <tag> PYTHON </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Git 学习笔记</title>
       <link href="/2020/03/12/Git-Note/"/>
       <url>/2020/03/12/Git-Note/</url>
