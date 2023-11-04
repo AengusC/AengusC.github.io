@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>可视化神器 Superset</title>
+      <link href="/2021/12/01/Supserset/"/>
+      <url>/2021/12/01/Supserset/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h3 id="快速部署-此部署方式需要外网-并且有很多依赖需要自己安装"><a href="#快速部署-此部署方式需要外网-并且有很多依赖需要自己安装" class="headerlink" title="快速部署(此部署方式需要外网,并且有很多依赖需要自己安装)"></a>快速部署(此部署方式需要外网,并且有很多依赖需要自己安装)</h3><blockquote><p>docker search superset  # 搜索公共镜像库可用superset容器</p></blockquote><p><a href="https://i.loli.net/2021/11/30/ZnlPyeF2BaYJIvu.jpg" data-fancybox="group" data-caption="1" class="fancybox"><img alt="1" title="1" data-src="https://i.loli.net/2021/11/30/ZnlPyeF2BaYJIvu.jpg" class="lazyload"></a></p><blockquote><p>docker pull amancevice/superset #拉取镜像到本地</p></blockquote><p><a href="https://i.loli.net/2021/11/30/B6LPxXkhEbHA23i.jpg" data-fancybox="group" data-caption="2" class="fancybox"><img alt="2" title="2" data-src="https://i.loli.net/2021/11/30/B6LPxXkhEbHA23i.jpg" class="lazyload"></a></p><blockquote><p>#后台运行容器并映射到8088端口,返回容器ID <br><br>docker run -p 8088:8088 -d amancevice/superset<br><br>#查看容器状态<br><br>docker ps<br><br>#进入容器并初始化superset,并注册用户<br><br>docker exec -it &lt;容器ID&gt; superset-init</p></blockquote><p><a href="https://i.loli.net/2021/11/30/WEAYo5NQ1nDH6gU.jpg" data-fancybox="group" data-caption="3.jpg" class="fancybox"><img alt="3.jpg" title="3.jpg" data-src="https://i.loli.net/2021/11/30/WEAYo5NQ1nDH6gU.jpg" class="lazyload"></a><br><br></p><p>接下来就可以通过 http://服务器IP:8088 访问superset啦<br></p><ul><li>重要说明</li></ul><p>在安装过程中可能会报丢失依赖，根据报错信息，把依赖安装上去<br>在整个过程中，必须处在系统对应的python版本(我的是3.7)环境下执行命令<br><br><br>参考官方文档 docker 介绍及安装:　<a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/</a><br><br>参考官方文档 superset 介绍：<a href="https://superset.apache.org/docs/intro" target="_blank" rel="noopener">https://superset.apache.org/docs/intro</a> </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> Superset </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> 可视化神器 Superset </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux 随笔</title>
+      <link href="/2021/11/15/linux/"/>
+      <url>/2021/11/15/linux/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h4 id="备份与还原备份"><a href="#备份与还原备份" class="headerlink" title="备份与还原备份"></a>备份与还原备份</h4><blockquote><p> mysqldump -h 127.0.0.1 -uroot -p –all-databases &gt; file_name.sql //备份 <br><br><br>sz file_name.sql //下载备份⽂件 <br><br><br>rz //上传备份⽂ <br><br><br>mysql -h 127.0.0.1 -uroot -p &lt; file_name.sql //选择⽂件 ,还原数据库备份</p></blockquote><h4 id="mv-文件移动更名"><a href="#mv-文件移动更名" class="headerlink" title="mv (文件移动更名)"></a>mv (文件移动更名)</h4><p>文件改名:</p><blockquote><p>mv test.txt ttt.txt<br></p></blockquote><p>移动文件:</p><blockquote><p>mv ttt.txt test3</p></blockquote><blockquote><p>移动多个文件到指定目录<br>mv -t test4/ test3/*<br><br> 将文件1命名为文件2，如果文件2已存在，询问是否覆盖:<br>mv -i 3.txt 1.txt<br><br><br>-b ：若需覆盖文件，则覆盖前先行备份。<br><br>-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；<br><br>-i ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！<br><br>-u ：若目标文件已经存在，且 source 比较新，才会更新(update)<br><br>-t  ： –target-directory=DIRECTORY move all SOURCE arguments into<br> DIRECTORY，即指定mv的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。<br><br></p></blockquote><h4 id="cp-文件复制"><a href="#cp-文件复制" class="headerlink" title="cp(文件复制)"></a>cp(文件复制)</h4><p>文件/目录复制</p><blockquote><p>命令格式：cp [-adfilprsu] 源文件(source) 目标文件(destination)<br><br><br>              cp [option] source1 source2 source3 …  directory<br></p></blockquote><p>参数说明：</p><blockquote><p>   -a:是指archive的意思，也说是指复制所有的目录<br><br>    -d:若源文件为连接文件(link file)，则复制连接文件属性而非文件本身<br><br>    -f:强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制<br><br>    -i:若目标文件(destination)已存在，在覆盖时会先询问是否真的操作<br><br>    -l:建立硬连接(hard link)的连接文件，而非复制文件本身<br><br>    -p:与文件的属性一起复制，而非使用默认属性<br><br>    -r:递归复制，用于目录的复制操作<br><br>    -s:复制成符号连接文件(symbolic link)，即“快捷方式”文件<br><br>    -u:若目标文件比源文件旧，更新目标文件<br><br>    如将/test1目录下的file1复制到/test3目录，并将文件名改为file2,可输入以下命令：<br><br>    cp /test1/file1 /test3/file2</p></blockquote><h4 id="rm-文件删除"><a href="#rm-文件删除" class="headerlink" title="rm(文件删除)"></a>rm(文件删除)</h4><blockquote><p>  命令格式：rm [fir] 文件或目录<br><br>    参数说明：<br><br>    -f:强制删除<br><br>    -i:交互模式，在删除前询问用户是否操作<br><br>    -r:递归删除，常用在目录的删除<br><br>    如删除/test目录下的file1文件，可以输入以下命令：<br><br>    rm -i /test/file1</p></blockquote><h4 id="sz-rz-文件上传与下载"><a href="#sz-rz-文件上传与下载" class="headerlink" title="sz rz (文件上传与下载)"></a>sz rz (文件上传与下载)</h4><blockquote><p>rz<br>选择文件进行上传<br><br>sz 文件名<br><br>sz后面跟文件名可以进行文件从linux上面下载。</p></blockquote><h4 id="find-全局搜索"><a href="#find-全局搜索" class="headerlink" title="find(全局搜索)"></a>find(全局搜索)</h4><p>将当前目录及其子目录下所有文件后缀为 .c 的文件列出来:</p><blockquote><p>find . -name “*.c”</p></blockquote><p>将当前目录及其子目录中的所有文件列出：</p><blockquote><p>find . -type f</p></blockquote><p>将当前目录及其子目录下所有最近 20 天内更新过的文件列出:</p><blockquote><p>find . -ctime -20</p></blockquote><p>查找 /var/log 目录中更改时间在 7 日以前的普通文件，并在删除之前询问它们：</p><blockquote><p>find /var/log -type f -mtime +7 -ok rm {} ;</p></blockquote><p>查找当前目录中文件属主具有读、写权限，并且文件所属组的用户和其他用户具有读权限的文件：</p><blockquote><p>find . -type f -perm 644 -exec ls -l {} ;</p></blockquote><p>查找系统中所有文件长度为 0 的普通文件，并列出它们的完整路径：</p><blockquote><p>find / -type f -size 0 -exec ls -l {} \</p></blockquote><hr><h4 id="cat、tac、tail、head-文件内容的查看"><a href="#cat、tac、tail、head-文件内容的查看" class="headerlink" title="cat、tac、tail、head(文件内容的查看)"></a>cat、tac、tail、head(文件内容的查看)</h4><h5 id="一、cat命令对文件内容正序查看时，可以使用cat命令。还可以两多个文件输出到一个文件中。也可以新建一个文件"><a href="#一、cat命令对文件内容正序查看时，可以使用cat命令。还可以两多个文件输出到一个文件中。也可以新建一个文件" class="headerlink" title="一、cat命令对文件内容正序查看时，可以使用cat命令。还可以两多个文件输出到一个文件中。也可以新建一个文件"></a>一、cat命令对文件内容正序查看时，可以使用cat命令。还可以两多个文件输出到一个文件中。也可以新建一个文件</h5><blockquote><p>cat filename  正序查看文件所有内容<br><br><br>  cat -n filename 带行号正序查看文件所有内容<br><br><br>  cat -b filename 忽略空白行，带行号正序显示文件所有内容<br><br><br>  cat  &gt; filename 新建一个文件<br><br><br>  cat filename1 filename2 &gt; filename3 将filename1<br> filename2合并为filename3，此时filename3中只有filename1和filename2文件中的内容<br><br><br>  cat filename1 filename2 &gt;&gt; filename3 将filename1<br><br> filename2文件的内容追加到filename3文件中<br><br><br>  cat /dev/null &gt; filename 清空filename文件中的内容<br><br></p></blockquote><h5 id="二、tac命令"><a href="#二、tac命令" class="headerlink" title="二、tac命令"></a>二、tac命令</h5><p>tac倒过来就是cat，是将文件倒着显示，即文章最后一行显示在最上边。使用方法如下 tac filename</p><h5 id="三、tail命令"><a href="#三、tail命令" class="headerlink" title="三、tail命令"></a>三、tail命令</h5><p>tail命令是指定显示文件后若干行的内容。下面介绍一下具体使用方法。</p><blockquote><p>tail -f filename 显示filename文件尾部内容，默认是10行，相当于tail -n 10，但是会不断刷新显示到屏幕上<br><br><br>tail -n number filename 显示filename文件尾部number行内容<br><br><br>tail -n +number filename 从第number行显示文件内容<br><br></p></blockquote><h5 id="四、head命令"><a href="#四、head命令" class="headerlink" title="四、head命令"></a>四、head命令</h5><blockquote><p>head 显示前n行的内容<br><br><br>  head -n number filename</p></blockquote><h5 id="文本关键字搜索"><a href="#文本关键字搜索" class="headerlink" title="文本关键字搜索"></a>文本关键字搜索</h5><p>直接输入 /关键字 并回车，定位到第一个关键字，</p><blockquote><p>/content 通过n向下查找，通过N向上查找</p></blockquote><p>直接输入 ?关键字 并回车</p><blockquote><p>?content 通过n向上查找，通过N向下查找</p></blockquote><h5 id="添加权限"><a href="#添加权限" class="headerlink" title="添加权限"></a>添加权限</h5><p>给文件添加可执行权限指令</p><blockquote><p>chmod +x file  #file为文件名</p></blockquote><p>给所有用户添加可读写执行权限</p><blockquote><p>chmod 777 file  #file为文件名</p></blockquote><h5 id="查看进程-ps-Processes-Status"><a href="#查看进程-ps-Processes-Status" class="headerlink" title="查看进程 ps (Processes Status)"></a>查看进程 ps (Processes Status)</h5><p>查看系统所有的java进程数据</p><blockquote><p>ps aux | grep java</p></blockquote><h5 id="查看并杀死僵尸进程"><a href="#查看并杀死僵尸进程" class="headerlink" title="查看并杀死僵尸进程"></a>查看并杀死僵尸进程</h5><blockquote><p>用top 查看进程 如果zombie 大于“0”表示服务器当前存在僵尸进程</p></blockquote><p>如果存在僵尸进程，可以使用命令</p><blockquote><p>ps -A -ostat,ppid,pid,cmd | grep -e ‘^[Zz]&#39;</p></blockquote><p>注解：</p><blockquote><p>-A 参数列出所有进程<br><br>-o 自定义输出字段 我们设定显示字段为 stat（状态）, ppid（进程父id）, pid(进程id)，cmd（命令）这四个参数<br>因为状态为 z或者Z的进程为僵尸进程，所以我们使用grep抓取stat状态为zZ进程</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git 学习笔记</title>
+      <link href="/2020/03/12/Git-Note/"/>
+      <url>/2020/03/12/Git-Note/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h4 id="一-git创建本地版本库小结"><a href="#一-git创建本地版本库小结" class="headerlink" title="一.git创建本地版本库小结"></a>一.git创建本地版本库小结</h4><p>任何事情必须先在本地初始化<br>初始化一个Git仓库，使用<code>git init</code>命令。<br>添加文件到Git仓库,分两步：<br>使用命令<code>git add &lt;file&gt;</code>,注意,可反复多次使用,添加多个文件；<br>使用命令<code>git commit -m &lt;message&gt;</code> 完成.    </p><hr><h4 id="二-要随时掌握工作区的状态"><a href="#二-要随时掌握工作区的状态" class="headerlink" title="二.要随时掌握工作区的状态"></a>二.要随时掌握工作区的状态</h4><p>1.使用<code>git status</code>命令。</p><p>2.如果<code>git status</code>告诉你有文件被修改过,用git diff可以查看修改内容。</p><hr><h4 id="三-版本回退"><a href="#三-版本回退" class="headerlink" title="三.版本回退"></a>三.版本回退</h4><p>1.HEAD指向的版本就是当前版本,因此,Git允许我们在版本的历史之间穿梭,<br>使用命令<code>git reset --hard commit_id</code>。</p><p>2.穿梭前,用<code>git log</code>可以查看提交历史,以便确定要回退到哪个版本。</p><p>3.要重返未来,用<code>git reflog</code>查看命令历史,以便确定要回到未来的哪个版本。</p><hr><h4 id="四-工作区和暂存区"><a href="#四-工作区和暂存区" class="headerlink" title="四.工作区和暂存区"></a>四.工作区和暂存区</h4><p>1.就是你在电脑里能看到的目录,比如我的<code>AengusChen.github.io</code>文件夹就是一个工作区\</p><p>2.工作区有一个隐藏目录.git,这个不算工作区,而是Git的版本库,Git的版本库里存了很多东西,其中最重要的就是称为stage（或者叫index）的暂存区,还有Git为我们自动创建的第一个分支<code>master</code>,以及指向master的一个指针叫HEAD。</p><p>3.git管理的是修改,也就是说每次修改需要git add <file> 放入到暂存区,然后<code>git commit</code>才能算最终的修改。</file></p><p><a href="https://i.loli.net/2020/03/11/gZGwzKQbujBacJM.jpg" data-fancybox="group" data-caption="0.jpg" class="fancybox"><img alt="0.jpg" title="0.jpg" data-src="https://i.loli.net/2020/03/11/gZGwzKQbujBacJM.jpg" class="lazyload"></a></p><hr><h4 id="五-撤销修改场景"><a href="#五-撤销修改场景" class="headerlink" title="五.撤销修改场景"></a>五.撤销修改场景</h4><p>场景1：当你改乱了工作区某个文件的内容,想直接丢弃工作区的修改时,用命令<code>git checkout -- file</code>。</p><p>场景2：当你不但改乱了工作区某个文件的内容,还添加到了暂存区时,想丢弃修改,分两步,第一步用命令<code>git reset HEAD &lt;file&gt;</code>,就回到了场景1,第二步按场景1操作。</p><p>场景3：已经提交了不合适的修改到版本库时,想要撤销本次提交,参考版本回退一节,不过前提是没有推送到远程库。</p><hr><h4 id="六-删除情景"><a href="#六-删除情景" class="headerlink" title="六.删除情景"></a>六.删除情景</h4><p>1.在文件管理器中删除文件,只删除了工作区的文件,暂存区的文件并未更新,<br>会导致工作区与暂存区的文件版本不一致,这个时候可以使用<code>git rm</code> 删除暂存区的文件,也可以使用 git reflog查看命令历史操作日志,然后用<code>git reset --hard +log</code>中的ID进行回滚。</p><p>2.直接使用 <code>git rm &lt;文件名&gt;</code> 同时删除工作区与暂存区的文件。</p><p>3.以上两种操作都是可以回滚的,除非是 git push -u origin master 提交至远程仓库,只要是在暂存区的文件都可以通过日志找到ID进行回滚。</p><hr><h4 id="七-添加github远程库与本地git工作区建立连接"><a href="#七-添加github远程库与本地git工作区建立连接" class="headerlink" title="七.添加github远程库与本地git工作区建立连接"></a>七.添加github远程库与本地git工作区建立连接</h4><p>1.<code>git remote add origin</code> 自己github中仓库的SSH地址\</p><p>2.<code>git push -u origin master</code> 第一次推送本地库的master所有内容至<br>远程库。</p><p>3.<code>git push origin master</code> 只要进行过步骤二的操作,就可以通过这个命令进行推送了。</p><hr><h4 id="八-从远程克隆github库到本地"><a href="#八-从远程克隆github库到本地" class="headerlink" title="八.从远程克隆github库到本地"></a>八.从远程克隆github库到本地</h4><p>1.git clone github仓库的SSH地址 (建议用SSH协议,http协议速度太慢,每次都要输入口令)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+          <category> GIT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> 技术 </tag>
+            
+            <tag> GIT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
